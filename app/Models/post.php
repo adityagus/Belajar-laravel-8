@@ -18,4 +18,9 @@ class Post extends Model
     // untuk menambahkan ke guarded di dalam model
     protected $guarded = ['id'];
     
+    public function category()
+    {
+      return $this->belongsTo(Category::class);
+    }
+    
 }
