@@ -6,7 +6,7 @@
 
   @foreach ($categories as $category)
 
-  <ul>
+  <ul type="circle ">
     <li>
       <h2><a href="/categories/{{ $category->slug }}">{{ $category->name }}</a></h2>
     </li>
