@@ -17,6 +17,7 @@ class Post extends Model
     
     // untuk menambahkan ke guarded di dalam model
     protected $guarded = ['id'];
+    protected $with = ['author', 'category'];
     
     public function category()
     {
