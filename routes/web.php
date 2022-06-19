@@ -41,13 +41,15 @@ Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 Route::get('/categories', function (Category $category) {
   return view('categories', [
     'title' => 'Post categories',
+    "active" => 'categories',
     'categories' =>  Category::all()
   ]);
 });
 
 Route::get('/categories/{category:slug}', function (Category $category) {
-  return view('category', [
+  return view('posts', [
     'title' => "Post By Category: $category->name",
+    "active" => 'categories',
     'posts' => $category->posts->load('author', 'category'),
   ]);
 });
